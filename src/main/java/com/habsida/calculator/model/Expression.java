@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.habsida.calculator.constant.ExpressionPattern.ARITHMETIC_OPERATOR;
-import static com.habsida.calculator.constant.ExpressionPattern.NUMBER_FROM_ZERO_TO_TEN;
+import static com.habsida.calculator.constant.ExpressionPattern.NUMBER_FROM_ONE_TO_TEN;
 
 public class Expression {
     private final String value;
@@ -24,7 +24,7 @@ public class Expression {
         if (!numberList.isEmpty()) {
             return numberList;
         }
-        Pattern pattern = Pattern.compile(NUMBER_FROM_ZERO_TO_TEN);
+        Pattern pattern = Pattern.compile(NUMBER_FROM_ONE_TO_TEN);
         Matcher matcher = pattern.matcher(value);
         while (matcher.find()) {
             numberList.add(Integer.parseInt(matcher.group()));
